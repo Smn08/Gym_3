@@ -1,0 +1,19 @@
+{
+  "name": "gym",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace web run dev",
+    "dev:api": "npm --workspace api run start:dev",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "lint": "npm run lint -ws",
+    "build": "npm run build -ws",
+    "test": "npm test -ws"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
